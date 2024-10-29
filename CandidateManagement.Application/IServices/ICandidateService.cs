@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CandidateManagement.Application.DTOs;
 
 namespace CandidateManagement.Application.IServices
 {
-    internal interface ICandidateService
+    public interface ICandidateService
     {
+        Task<string> AddOrUpdateCandidateAsync(CandidateDto candidateDto);
     }
 }

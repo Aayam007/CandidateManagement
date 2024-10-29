@@ -1,6 +1,5 @@
 ﻿
 using CandidateManagement.Domain.Entities;
-using System.Threading.Tasks;
 
 namespace CandidateManagement.Domain.IRepositories
 {
