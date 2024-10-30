@@ -2,7 +2,7 @@
 
 ## Overview
 
-This application is designed to manage candidate information, providing functionalities to add, update, and retrieve candidate data. It serves as an API for handling candidate profiles, leveraging a well-structured architecture to ensure maintainability and scalability.
+This application is designed to manage candidate information, providing functionalities to add and update candidate data. It serves as an API for handling candidate profiles, leveraging a well-structured architecture to ensure maintainability and scalability.
 
 ## Architecture
 
@@ -13,16 +13,16 @@ The application follows **Onion Architecture**, which emphasizes the separation 
 #### Key Layers:
 
 1. **Core Layer (Domain Layer)**:
-   - Contains the core business logic and domain entities (e.g., `Candidate` class). This layer is independent of any external dependencies, focusing solely on the application's domain.
+   - Contains core business logic and domain entities (e.g., `Candidate` class) as well as repository interfaces (e.g., `ICandidateRepository`). This layer is independent of any external dependencies, focusing solely on the application's domain.
 
 2. **Application Layer**:
-   - Comprises the application services (e.g., `ICandidateService` and `CandidateService`) that implement business logic and orchestrate interactions between the domain and the data access layer.
+   - Comprises application services (e.g., `ICandidateService` and `CandidateService`) that implement business logic and orchestrate interactions between the domain and the data access layer.
 
 3. **Infrastructure Layer**:
-   - Includes the data access layer with repository interfaces (e.g., `ICandidateRepository`) and implementations (e.g., `CandidateRepository`). This layer handles data persistence using Entity Framework Core.
+   - Includes data access implementations (e.g., `CandidateRepository`) that handle data persistence using Entity Framework Core. This layer implements the interfaces defined in the domain layer.
 
 4. **Presentation Layer**:
-   - Consists of controllers (e.g., `CandidatesController`) that handle incoming HTTP requests, returning responses while interacting with application services.
+   - Consists of controllers (e.g., `CandidatesController`) that handle incoming HTTP requests and return responses while interacting with application services.
 
 ### Advantages of Onion Architecture
 
@@ -30,7 +30,6 @@ The application follows **Onion Architecture**, which emphasizes the separation 
 - **Testability**: The architecture allows for easy unit testing of the core business logic without requiring external dependencies.
 - **Flexibility**: Changes in the outer layers (like switching from one database technology to another) do not affect the core business logic.
 - **Maintainability**: The clear separation makes the application easier to maintain and extend over time.
-
 
 ## Prerequisites
 
